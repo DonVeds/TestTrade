@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+@mixin media-phone {
+  @media (min-width: $mediaWidthPhone) {
+    @content
+  }
+};
+
+@mixin media-tablet {
+  @media (max-width: $mediaWidthTablet) {
+    @content
+  }
+};
+
+@mixin media-desctop {
+  @media (min-width: $mediaWidthTablet) {
+    @content
+  }
+};
+
+@mixin media-custom($width) {
+  @media (min-width: $width) {
+    @content
+  }
+}

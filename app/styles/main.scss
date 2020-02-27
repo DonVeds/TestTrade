@@ -1,0 +1,272 @@
+// @import "../../../node_modules/normalize.css/normalize";
+
+@import "./variables.scss";
+@import "./media.scss";
+
+body{
+  margin: 0;
+  font-family: 'Roboto', ;
+  background-color: $bgc;
+}
+
+//Первый блок
+
+.mainChoosingSlide{
+  background: url("../img/bg.png") top center;
+  background-size: cover;
+  height: 900px;
+}
+
+
+
+.mainChoosingSlide-title{
+  margin: 0;
+  margin-bottom: 40px;
+  padding-top: 15%;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 300;
+}
+
+@include media-tablet {
+  .mainChoosingSlide-title {
+    padding-top: 5%;
+  }
+}
+
+.mainChoosingSlide-circleButtons {
+  display: flex;
+  justify-content: center;
+}
+
+@include media-tablet {
+  .mainChoosingSlide-circleButtons {
+    display: none;
+  }
+}
+
+.circleButton{
+  border-radius: 50%;
+  width: 280px;
+  height: 280px;
+  background-color: $whiteBtn;
+  text-align: center;
+  margin: 0 10px 0 10px;
+  border: 10px solid transparent;
+}
+
+.circleButton:hover{
+  box-shadow: 0 0 0 2px $themeColor inset;
+}
+
+.circleButton > img{
+  padding-top: 28%;
+}
+.circleButton > p{
+  font-size: 18px;
+}
+
+.invite > img{
+  padding-top: 21%;
+}
+
+//Мобильный блок
+
+.mainChoosingSlide_mobile {
+  display: none
+}
+
+@include media-tablet {
+  .mainChoosingSlide_mobile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.mobile-card_trade, .mobile-card_invest, .mobile-card_invite {
+  background-color: $whiteBtn;
+  width: 90%;
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mobile-card-img {
+  margin: 20px;
+  width: 70px;
+}
+
+.mobile-card-title {
+  text-align: left;
+  height: 90px;
+  line-height: 90px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mobile-card-arrow_trade, .mobile-card-arrow_invest, .mobile-card-arrow_invite {
+  height: 20px;
+  width: 20px;
+  margin: auto;
+  margin-right: 30px;
+  margin-top: 30px;
+  border: 2px solid #928f87;
+  border-style: hidden hidden solid solid;
+  transform: rotate(-45deg);
+}
+
+.mobile-card-arrow_invite{ 
+  margin-right: 30px;
+  margin-top: 50px;
+}
+.mobile-card-arrow_invest{ 
+  margin-right: 30px;
+  margin-top: 35px;
+}
+
+.mobile-card-description_trade, .mobile-card-description_invest, .mobile-card-description_invite {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+@include media-tablet {
+  .description-text, .description-header {
+    width: 90% !important;
+    margin: auto !important;
+  }
+}
+
+@include media-tablet {
+  .description-header {
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
+  }
+}
+
+@include media-tablet {
+  .description-btn {
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+}
+
+
+
+@include media-tablet {
+  .description-list {
+    width: 87% !important;
+    margin: auto !important;
+  }
+}
+
+.description-img {
+  width: 100%;
+}
+
+
+
+
+//Второй блок
+
+.mainInfoSlide{
+  background: url("../img/bg2.png") bottom center;
+  background-size: cover;
+}
+
+@include media-tablet {
+  .mainInfoSlide {
+    display: none;
+  }
+}
+
+.mainInfoSlide-nav {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.mainInfoSlide-nav-btn_trade, .mainInfoSlide-nav-btn_invest, .mainInfoSlide-nav-btn_invite{
+  width: 300px;
+  height: 112px;
+  text-align: center;
+  margin: 0 10px 0 10px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  font-size: 18px;
+  border-bottom: 2px solid transparent;
+}
+
+.mainInfoSlide-nav-btn_trade {
+  grid-area: btn_trade;
+}
+
+.mainInfoSlide-nav-btn_trade:hover, .mainInfoSlide-nav-btn_invest:hover, .mainInfoSlide-nav-btn_invite:hover{
+  border-bottom: 2px solid $themeColor;
+  color: $themeColor;
+}
+
+.mainInfoSlide-descriptoins {
+  display: flex;
+  justify-content: center;
+}
+
+.description_trade, .description_invest, .description_invite {
+  width: 940px;
+  margin-top: 40px;
+  font-size: 14px;
+  padding-bottom: 150px;
+}
+
+.disabled {
+  display: none
+}
+
+.description-text {
+  width: 60%;
+  margin: 0;
+  line-height: 20px;
+}
+
+.description-header {
+  font-weight: lighter;
+  margin-top: 50px;
+}
+
+.description-list {
+  list-style: none; 
+  counter-reset: li;
+  padding-left: 16px;
+  width: 60%;
+  line-height: 25px;
+}
+
+.description-list > li:before {
+  content: counter(li)" "; 
+  color: $themeColor;
+  display: inline-block; 
+  width: 1em; 
+  margin-left: -0.8em;
+  // text-align: right; 
+  font-size: 20px;
+}
+
+.description-list > li {
+  counter-increment: li 
+}
+
+.description-btn {
+  background-color: $themeColor;
+  border: 0;
+  color: white;
+  height: 30px;
+  width: 150px;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+
+
+
